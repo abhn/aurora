@@ -116,6 +116,39 @@ class QualityFeedback(RowInfo):
     class Meta:
         db_table = 'quality_feedback'
 
+class FeedbackInfo(RowInfo):
+    """
+    Stores the different domains across several technologies
+    """
+    feedback_name = models.CharField(max_length=100, unique=True)
+    feedback_type = models.IntegerField(default=999)
+    feedback_desc = models.TextField(null=True, blank=True)
+    
+    def __str__(self):
+        return self.feedback_name
+    
+    class Meta:
+        db_table = 'feedback_types'
+        ordering = ['feedback_type']
+
+
+class FeedbackData(RowInfo):
+    """
+    Stores the different domains across several technologies
+    """
+    feedback = models.ForeignKey(FeedbackInfo)
+    feedback_email = models.CharField(max_length=100, default='Anon')
+    feedback_name =  models.CharField(max_length=100, default='Anon')
+    feedback_msg = models.TextField(null=True, blank=True)
+    # all the other content will be jsonified and added to this column
+    feedback_extra = models.TextField(null=True, blank=True)
+    
+    def __str__(self):
+        return self.feedback
+    
+    class Meta:
+        db_table = 'feedback_data'
+        ordering = ['feedback']
 
 # TO DO
 # career to domain linking

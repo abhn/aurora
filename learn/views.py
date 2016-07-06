@@ -8,7 +8,7 @@ import json
 from pprint import pprint
 
 #aurora imports
-from learn.models import Domain, Technology, Resources, QualityFeedback
+from learn.models import Domain, Technology, Resources, QualityFeedback, FeedbackInfo
 from learn.utils.aurora_utils import get_all_domains, get_all_technologies, get_resources_grouped_by_tech, get_resources_grouped_by_domain, get_domains_and_slugs, get_tech_and_slugs
 from learn.utils.wikipedia_utils import get_wiki_modal_data
 # Create your views here.
@@ -96,3 +96,8 @@ def resource_quality_ratings(request):
         except Exception as e:
             print e
     return HttpResponse(True)
+
+
+def feedback_forms(request):
+    all_forms = FeedbackInfo.objects.filter(active=True)
+    return render(request, 'feedback_forms.html', {'all_forms': all_forms})
