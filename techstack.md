@@ -1,10 +1,7 @@
 # Techstack - Aurora
------
-
-The idea is to have a minimum set of features that we can build with utmost quality.
-Focus is on building production ready components with scalability, proper comments, unit tests implemented and documentation.
-Focus is also on reducing the number of technologies involved. Using a proper set of tools instead of putting in everything at our disposal.
------
+- The idea is to have a minimum set of features that we can build with utmost quality.
+- Focus is on building production ready components with scalability, proper comments, unit tests implemented and documentation.
+- Focus is also on reducing the number of technologies involved. Using a proper set of tools instead of putting in everything at our disposal.
 
 ### Backend
 - Django-MySQL backend with a restful interface [#TODO Write API documentation]
