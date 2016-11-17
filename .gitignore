@@ -87,3 +87,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+.idea/.name
+.idea/aurora.iml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+envaurora/
